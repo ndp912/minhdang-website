@@ -9380,3 +9380,90 @@ header.masthead {
   font-size: 0.75em; /* Adjust size as needed */
   display: block; /* Ensure it behaves like a block element */
 }
+
+@media (max-width: 1024px) {
+  .services-heading {
+    font-size: 3vw;
+  }
+  
+  .services-container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .text {
+    font-size: 10vw;
+  }
+
+  .masthead-container {
+    font-size: 7vw;
+  }
+
+  .footer-container {
+    max-width: 80vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-heading {
+    font-size: 4vw;
+  }
+
+  .masthead-container {
+    font-size: 8vw;
+    margin-top: 10vh;
+  }
+
+  .text {
+    font-size: 12vw;
+  }
+
+  .connect-heading {
+    font-size: 2vw;
+  }
+
+  .connect-text {
+    font-size: 3vw;
+  }
+
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .masthead-container {
+    font-size: 10vw;
+    margin-top: 5vh;
+  }
+
+  .text {
+    font-size: 15vw;
+  }
+
+  .connect-heading {
+    font-size: 3vw;
+  }
+
+  .connect-text {
+    font-size: 4vw;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  .connect-col {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .connect-container {
+    flex-direction: column;
+  }
+
+  #email-text, #phone-text {
+    font-size: 3vw !important;
+  }
+}
