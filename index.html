@@ -14,25 +14,30 @@
     </head>
     <body id="page-top">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/logos/Gold.png" alt="..." /></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars ms-1"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#project">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#connect">Contact</a></li>
-                    </ul>
-                </div>
+        <nav class="app__navbar">
+            <div class="app__navbar-logo">
+              <img src="./assets/img/logos/Gold.png" alt="app logo" />
             </div>
-        </nav> 
+            <ul class="app__navbar-links">
+              <li class="p__opensans"><a href="#home">Home</a></li>
+              <li class="p__opensans"><a href="#about">About</a></li>
+              <li class="p__opensans"><a href="#services">Services</a></li>
+              <li class="p__opensans"><a href="#projects">Projects</a></li>
+              <li class="p__opensans"><a href="#contact">Contact</a></li>
+            </ul>      
+          </nav>
+          
+          <script>
+            document.querySelector('.app__navbar-smallscreen svg').addEventListener('click', function() {
+              document.getElementById('smallscreen-overlay').style.display = 'block';
+            });
+          
+            document.querySelector('#smallscreen-overlay svg').addEventListener('click', function() {
+              document.getElementById('smallscreen-overlay').style.display = 'none';
+            });
+          </script>
         <!-- Masthead-->
-        <header class="masthead">
+        <header class="masthead" id="home">
             <div class="masthead-container">
                 <div class="masthead-div minhdang">MinhDang</div> 
                     <div class="masthead-div interior"> 
@@ -45,7 +50,7 @@
             <div class="container">
                 <div class="services-body">
                     <div class="services-container">
-                        <h1 class="section-heading text-uppercase services-heading">Services</h1>
+                        <h1 class="section-heading services-heading">Services</h1>
                         <div class="border-wrapper">
                             <h1 class="text">FURNITURE<span class="services-span">FUNITURE</span></h1>
                         </div>
@@ -89,7 +94,7 @@
         </section>
         -->
         <!-- Projects-->
-        <section class="page-section bg-light" id="project">
+        <section class="page-section bg-light" id="projects">
             <div class="project-container">
                 <div class="text-center">
                     <h2 class="project-heading text-uppercase">Featured Work</h2>
@@ -111,7 +116,7 @@
         <!-- About-->
         
         <!-- Team-->
-        <section class="page-section" id="connect">
+        <section class="page-section" id="contact">
             <div class="container">
                 <div class="connect-body">
                     <h1 class="section-heading text-uppercase connect-heading">Connect</h1>
