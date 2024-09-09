@@ -76,36 +76,45 @@ window.onmousemove = e => handleOnMove(e);
 window.ontouchmove = e => handleOnMove(e.touches[0]);
 
 document.addEventListener('DOMContentLoaded', function () {
-    const navbar = document.getElementById('mainNav');
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbar = document.getElementById('mainNav');
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const footer = document.querySelector('footer');
 
-    function onScroll() {
-        let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+  function onScroll() {
+      let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+      let currentLink = '';
 
-        let currentLink = '';
+      const footerTop = footer.offsetTop;
+      const viewportHeight = window.innerHeight;
 
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
+      if (scrollPosition + viewportHeight >= footerTop) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          return;
+      }
 
-            if (scrollPosition >= sectionTop - 200 && scrollPosition < sectionTop + sectionHeight) {
-                currentLink = section.id;
-            }
-        });
+      sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
 
-        navLinks.forEach(link => {
-            if (link.getAttribute('href').substring(1) === currentLink) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
-            }
-        });
-    }
+          if (scrollPosition >= sectionTop - 200 && scrollPosition < sectionTop + sectionHeight) {
+              currentLink = section.id;
+          }
+      });
 
-    window.addEventListener('scroll', onScroll);
-    onScroll();
+      navLinks.forEach(link => {
+          if (link.getAttribute('href').substring(1) === currentLink) {
+              link.classList.add('active');
+          } else {
+              link.classList.remove('active');
+          }
+      });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
 });
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,10 +139,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const rightArrow = document.getElementById('right-arrow');
 
   leftArrow.addEventListener('click', () => {
-    scrollContainer.scrollLeft -= 300;
+    scrollContainer.scrollLeft -= 500;
   });
 
   rightArrow.addEventListener('click', () => {
-    scrollContainer.scrollLeft += 300;
+    scrollContainer.scrollLeft += 500;
   });
 });
