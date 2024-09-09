@@ -124,6 +124,16 @@ textElements.forEach(text => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  const scrollContainer = document.getElementById('image-container');
+  const leftArrow = document.getElementById('left-arrow');
+  const rightArrow = document.getElementById('right-arrow');
 
+  leftArrow.addEventListener('click', () => {
+    scrollContainer.scrollLeft -= 300;
+  });
 
-
+  rightArrow.addEventListener('click', () => {
+    scrollContainer.scrollLeft += 300;
+  });
+});
