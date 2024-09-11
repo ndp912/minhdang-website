@@ -1,67 +1,34 @@
+// const track = document.getElementById("image-track");
 
-window.addEventListener('DOMContentLoaded', event => {
-    var navbarShrink = function () {
-        const navbarCollapsible = document.body.querySelector('#mainNav');
-        if (!navbarCollapsible) {
-            return;
-        }
-        if (window.scrollY === 0) {
-            navbarCollapsible.classList.remove('navbar-shrink')
-        } else {
-            navbarCollapsible.classList.add('navbar-shrink')
-        }
+// const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-    };
+// const handleOnUp = () => {
+//   track.dataset.mouseDownAt = "0";  
+//   track.dataset.prevPercentage = track.dataset.percentage;
+// }
 
-    navbarShrink();
-
-    document.addEventListener('scroll', navbarShrink);
-
-    const navbarToggler = document.body.querySelector('.navbar-toggler');
-    const responsiveNavItems = [].slice.call(
-        document.querySelectorAll('#navbarResponsive .nav-link')
-    );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
-            if (window.getComputedStyle(navbarToggler).display !== 'none') {
-                navbarToggler.click();
-            }
-        });
-    });
-
-});
-
-const track = document.getElementById("image-track");
-
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
-
-const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";  
-  track.dataset.prevPercentage = track.dataset.percentage;
-}
-
-const handleOnMove = e => {
-  if(track.dataset.mouseDownAt === "0") return;
+// const handleOnMove = e => {
+//   if(track.dataset.mouseDownAt === "0") return;
   
-  const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+//   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+//         maxDelta = window.innerWidth / 2;
   
-  const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+//   const percentage = (mouseDelta / maxDelta) * -100,
+//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
   
-  track.dataset.percentage = nextPercentage;
+//   track.dataset.percentage = nextPercentage;
   
-  track.animate({
-    transform: `translate(${nextPercentage}%, -50%)`
-  }, { duration: 1200, fill: "forwards" });
+//   track.animate({
+//     transform: `translate(${nextPercentage}%, -50%)`
+//   }, { duration: 1200, fill: "forwards" });
   
-  for(const image of track.getElementsByClassName("project-image")) {
-    image.animate({
-      objectPosition: `${100 + nextPercentage}% center`
-    }, { duration: 1200, fill: "forwards" });
-  }
-}
+//   for(const image of track.getElementsByClassName("project-image")) {
+//     image.animate({
+//       objectPosition: `${100 + nextPercentage}% center`
+//     }, { duration: 1200, fill: "forwards" });
+//   }
+// }
 
 window.onmousedown = e => handleOnDown(e);
 
@@ -145,4 +112,23 @@ document.addEventListener('DOMContentLoaded', function () {
   rightArrow.addEventListener('click', () => {
     scrollContainer.scrollLeft += 500;
   });
+});
+
+gsap.from(".pre-loader-text", 0.8, {
+  y: 40,
+  opacity: 0,
+  ease: "power2.inOut",
+  delay: 1,
+});
+
+gsap.from(".loader", 2, {
+  width: 0,
+  ease: "power4.inOut",
+  delay: 2,
+});
+
+gsap.to(".pre-loader", 2, {
+  top: "-100%",
+  ease: "power4.inOut",
+  delay: 4,
 });

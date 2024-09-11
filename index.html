@@ -13,10 +13,20 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+
+        <!-- PreLoader-->
+
+        <div class="pre-loader">
+            <div class="pre-loader-content">
+              <div class="pre-loader-text">MinhDang <span>Interior</span></div>
+                <div class="loader"></div>
+            </div>
+        </div>
+
         <!-- Navigation-->
         <nav class="app__navbar">
             <div class="app__navbar-logo">
-                <img src="./assets/img/logos/Gold.png" alt="app logo" />
+                <a href="#home"><img src="./assets/img/logos/Gold.png" alt="app logo" /></a>
             </div>
             <ul class="app__navbar-links">
                 <li class="p__opensans"><a href="#home">Home</a></li>
@@ -25,7 +35,9 @@
                 <li class="p__opensans"><a href="#contact">Contact</a></li>
             </ul>      
         </nav>
+
         <!-- Masthead-->
+         
         <header class="masthead" id="home">
             <div class="masthead-container">
                 <div class="masthead-div minhdang">MinhDang</div> 
@@ -116,7 +128,7 @@
                     <p class="p__opensans" style="color: #AAA; margin-top: 2rem;">
                         Transforming spaces isn’t just about aesthetics; it’s about creating environments that inspire and uplift every moment of your life.
                     </p>
-                    <button type="button" class="custom__button">View More</button>
+                    <a href="./html/gallery.html"><button type="button" class="custom__button">View More</button></a>
                 </div>
             
                 <div class="app__gallery-images">
@@ -192,6 +204,9 @@
                         </div>
                         <div class="app__gallery-images_card flex__center">
                             <img src="./assets/img/projects/24.jpg" alt="gallery">
+                        </div>
+                        <div class="app__gallery-images_card flex__center">
+                            <img src="./assets/img/projects/25.jpg" alt="gallery">
                         </div>
                     </div>
                     <div class="app__gallery-images_arrows">
@@ -291,8 +306,8 @@
         -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
