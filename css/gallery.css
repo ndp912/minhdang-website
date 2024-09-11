@@ -294,7 +294,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background: var(--color-black);
-  z-index: 999;
+  z-index: 5;
   overflow: hidden;
 }
 
@@ -332,7 +332,6 @@ body {
   color: var(--color-grey);
 }
 
-
 @media screen and (max-width: 1150px) {
   .app__navbar-links {
       display: none;
@@ -352,6 +351,7 @@ body {
     margin-left: 2rem;
   }
 }
+
   /* Slider */
 
   * {
