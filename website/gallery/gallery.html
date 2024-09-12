@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="icon" type="image/jpeg" href="assets/img/logos/small-black-icon.png" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+    <link href="./gallery.css" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="app__navbar">
+        <div class="app__navbar-logo">
+            <a href="../index.html"><img src="../assets/img/logos/Gold.png" alt="app logo" /></a>
+        </div> 
+    </nav>
+        
+    <div class="pre-loader">
+      <div class="pre-loader-content">
+        <div class="pre-loader-text">MinhDang <span>Interior</span></div>
+          <div class="loader"></div>
+      </div>
+    </div>
+    
+    <div class="gallery">
+      <div class="slider-content">
+        <div class="slide-number">
+          <div class="prefix">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+          </div>
+          <div class="postfix"><span>/</span> 5</div>
+        </div>
+
+        <div class="slide-name">
+          <div class="names">
+            <div class="name"><a class="name-link" href="../projects/project1.html">Empire City</a></div>
+            <div class="name"><a class="name-link" href="../projects/project2.html">Nha Trang Penthouse</a></div>
+            <div class="name"><a class="name-link" href="../projects/project3.html">Parc Villa Sài Gòn</a></div>
+            <div class="name"><a class="name-link" href="./project4.html">Indochine Villa</a></div>
+            <div class="name"><a class="name-link" href="./project5.html">Villa BaSon</a></div>
+          </div>
+        </div>
+
+        <div class="slide-year">
+          <div class="years">
+            <div>2023</div>
+            <div>2021</div>
+            <div>2022</div>
+            <div>2023</div>
+            <div>2017</div>
+          </div>
+        </div>
+      </div>
+      <div class="slider">
+        <div class="slide" id="slide-1">
+          <img src="../assets/img/projects/1.jpg" alt="" />
+        </div>
+        <div class="slide" id="slide-2">
+          <img src="../assets/img/projects/2.jpg" alt="" />
+        </div>
+        <div class="slide" id="slide-3">
+          <img src="../assets/img/projects/3.jpg" alt="" />
+        </div>
+        <div class="slide" id="slide-4">
+          <img src="../assets/img/projects/4.jpg" alt="" />
+        </div>
+        <div class="slide" id="slide-5">
+          <img src="../assets/img/projects/5.jpg" alt="" />
+        </div>
+        <div style="height: 400vh"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./gallery.js"></script>
+</body>
+</html>
