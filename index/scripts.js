@@ -140,46 +140,7 @@ gsap.to(".pre-loader", 2, {
   delay: 4,
 });
 
-const slider = document.querySelector('.app__gallery-images_container');
-let isDown = false;
-let startX;
-let scrollLeft;
-let isDragging = false;
 
-slider.addEventListener('mousedown', (e) => {
-    e.preventDefault(); 
-    isDown = true;
-    isDragging = false; 
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-});
-
-slider.addEventListener('mouseleave', () => {
-    if (isDown && isDragging) {
-        isDown = false;
-        slider.classList.remove('active');
-    }
-});
-
-slider.addEventListener('mouseup', () => {
-    if (isDown && isDragging) {
-        isDown = false;
-        slider.classList.remove('active');
-    }
-    isDragging = false;
-});
-
-slider.addEventListener('mousemove', (e) => {
-    if (!isDown) return; 
-    e.preventDefault(); 
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3;
-    if (Math.abs(x - startX) > 5) { 
-        isDragging = true;
-        slider.scrollLeft = scrollLeft - walk;
-    }
-});
 
 
 
