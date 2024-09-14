@@ -511,12 +511,8 @@ section {
   margin-top: 10em;
 }
 
-.clients-imgs {
-  margin-top: 4em;
-}
-
 .clients-imgs .row {
-  height: 700px;
+  height: 60vh;
 }
 
 .products {
@@ -526,7 +522,7 @@ section {
 }
 
 .outro .row {
-  margin-top: 8em;
+  margin-bottom: 4em;
 }
 
 .img-1 .mask,
@@ -597,4 +593,37 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .outro .row {
+    margin-bottom: 8em;
+  }
+
+  .img-none {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 12vw;
+    margin-top: 5em;
+  }
+
+  .info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info p {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 4em;
+  }
 }
