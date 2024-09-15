@@ -1,47 +1,3 @@
-// const track = document.getElementById("image-track");
-
-// const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
-
-// const handleOnUp = () => {
-//   track.dataset.mouseDownAt = "0";  
-//   track.dataset.prevPercentage = track.dataset.percentage;
-// }
-
-// const handleOnMove = e => {
-//   if(track.dataset.mouseDownAt === "0") return;
-  
-//   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-//         maxDelta = window.innerWidth / 2;
-  
-//   const percentage = (mouseDelta / maxDelta) * -100,
-//         nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-//         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-  
-//   track.dataset.percentage = nextPercentage;
-  
-//   track.animate({
-//     transform: `translate(${nextPercentage}%, -50%)`
-//   }, { duration: 1200, fill: "forwards" });
-  
-//   for(const image of track.getElementsByClassName("project-image")) {
-//     image.animate({
-//       objectPosition: `${100 + nextPercentage}% center`
-//     }, { duration: 1200, fill: "forwards" });
-//   }
-// }
-
-window.onmousedown = e => handleOnDown(e);
-
-window.ontouchstart = e => handleOnDown(e.touches[0]);
-
-window.onmouseup = e => handleOnUp(e);
-
-window.ontouchend = e => handleOnUp(e.touches[0]);
-
-window.onmousemove = e => handleOnMove(e);
-
-window.ontouchmove = e => handleOnMove(e.touches[0]);
-
 document.addEventListener('DOMContentLoaded', function () {
   const navbar = document.getElementById('mainNav');
   const sections = document.querySelectorAll('section');
@@ -139,6 +95,28 @@ gsap.to(".pre-loader", 2, {
   ease: "power4.inOut",
   delay: 4,
 });
+
+const scrollers = document.querySelectorAll(".scroller");
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    scroller.setAttribute("data-animated", true);
+
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+
 
 
 
