@@ -15,26 +15,6 @@ textElements.forEach((text) => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const scrollContainer = document.getElementById("image-container");
-  const leftArrow = document.getElementById("left-arrow");
-  const rightArrow = document.getElementById("right-arrow");
-
-  leftArrow.addEventListener("click", () => {
-    scrollContainer.scrollTo({
-      left: scrollContainer.scrollLeft - 500,
-      behavior: "smooth",
-    });
-  });
-
-  rightArrow.addEventListener("click", () => {
-    scrollContainer.scrollTo({
-      left: scrollContainer.scrollLeft + 500,
-      behavior: "smooth",
-    });
-  });
-});
-
 gsap.from(".pre-loader-text", 0.8, {
   y: 40,
   opacity: 0,
