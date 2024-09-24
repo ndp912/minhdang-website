@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đặt Lịch Hẹn</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "YOUR_PUBLIC_KEY",
+        });
+      })();
+    </script>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- PreLoader-->
+
+    <div class="pre-loader">
+      <div class="pre-loader-content">
+        <div class="pre-loader-text">MinhDang <span>Interior</span></div>
+        <div class="loader"></div>
+      </div>
+    </div>
+
+    <section class="form">
+      <div class="form-container">
+        <div class="form-content" id="fancy-inputs">
+          <h2>Đặt Lịch Hẹn</h2>
+          <form id="bookingForm">
+            <label class="input" for="name">
+              <input type="text" id="name" name="name" required />
+              <span><span>Họ và tên:</span></span>
+            </label>
+
+            <label class="input" for="phone">
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                pattern="[0-9]*"
+                minlength="10"
+              />
+              <span><span>Số điện thoại:</span></span>
+            </label>
+
+            <label class="input" for="email">
+              <input type="email" id="email" name="email" required />
+              <span><span>Email:</span></span>
+            </label>
+
+            <label class="input" for="date">
+              <input type="date" id="date" name="date" required />
+            </label>
+
+            <label class="input" for="time">
+              <input type="time" id="time" name="time" required />
+            </label>
+            <div class="btn-holder">
+              <button class="custom__button" type="submit">
+                <span>Đặt lịch</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
