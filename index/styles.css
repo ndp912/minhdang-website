@@ -178,7 +178,14 @@ body {
 @media screen and (max-width: 650px) {
   .app__navbar-logo img {
     width: 80px;
-    margin-left: 3rem;
+  }
+
+  .app__navbar {
+    padding: 0 20px;
+  }
+
+  .app__navbar-button {
+    font-size: 12px;
   }
 }
 

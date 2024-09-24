@@ -108,4 +108,7 @@ gsap.to(".pre-loader", 2, {
   top: "-100%",
   ease: "power4.inOut",
   delay: 4,
+  onComplete: function () {
+    document.querySelector(".pre-loader").style.zIndex = "-1000";
+  },
 });
