@@ -469,3 +469,28 @@ select {
     width: 200px;
   }
 }
+
+input, select, textarea, button {
+  -webkit-appearance: none; /* Loại bỏ kiểu mặc định */
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0; /* Loại bỏ border-radius mặc định */
+  font-family: var(--font-base), serif; /* Font chữ mặc định */
+  color: var(--color-golden); /* Màu chữ */
+  background-color: transparent; /* Nền trong suốt */
+  border: 1px solid var(--color-golden); /* Đặt kiểu border */
+  padding: 10px; /* Đặt padding */
+  height: 50px; /* Chiều cao cố định */
+  line-height: normal; /* Reset line height */
+}
+
+input::placeholder {
+  color: var(--color-grey); /* Màu chữ cho placeholder */
+  font-family: var(--font-alt), sans-serif; /* Font cho placeholder */
+}
+
+input:focus {
+  outline: none; /* Loại bỏ glow mặc định */
+  border-color: var(--color-golden); /* Nổi bật khi focus */
+}
+
