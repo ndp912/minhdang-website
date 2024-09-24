@@ -328,8 +328,36 @@ select {
 
   .form-content h2 {
     font-size: 45px;
-    margin: 0;
+    margin-bottom: 3rem;
   }
+
+  .placeholder {
+    position: relative;
+    top: -75px;
+  }
+
+  [type="date"],
+  [type="time"] {
+    font-size: 16px;
+  }
+}
+
+input,
+select,
+textarea,
+button,
+span {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: var(--color-golden);
+  background-color: transparent;
+}
+
+[type="date"],
+[type="time"] {
+  color: var(--color-golden);
+  background-color: transparent;
 }
 
 /* Nav Bar
@@ -469,10 +497,3 @@ select {
     width: 200px;
   }
 }
-
-input, select, textarea, button {
-  -webkit-appearance: none; /* Loại bỏ kiểu mặc định */
-  -moz-appearance: none;
-  appearance: none;
-}
-
